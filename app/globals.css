@@ -6,8 +6,7 @@
   --line: #e7eaf0;
   --navy: #101a32;
   --blue: #315efb;
-  --background: #f7f8fb;
-  --white: #ffffff;
+  --background: #f5f7fb;
 }
 
 * {
@@ -31,47 +30,16 @@ input {
   font: inherit;
 }
 
-button {
-  -webkit-tap-highlight-color: transparent;
-}
-
 .page {
-  position: relative;
   min-height: 100vh;
-  overflow: hidden;
-  padding: 0 7vw 40px;
+  padding: 0 7vw 35px;
 }
 
-.orb {
-  position: absolute;
-  border-radius: 999px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.orbOne {
-  width: 430px;
-  height: 430px;
-  right: -200px;
-  top: -210px;
-  background: #e7edff;
-}
-
-.orbTwo {
-  width: 300px;
-  height: 300px;
-  left: -180px;
-  bottom: 50px;
-  background: #edf2ff;
-}
+/* NAVBAR */
 
 .navbar {
-  position: relative;
-  z-index: 2;
-
-  width: 100%;
   max-width: 1180px;
-  height: 82px;
+  height: 80px;
 
   margin: auto;
 
@@ -83,7 +51,7 @@ button {
 .brand {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 10px;
 }
 
 .brandLogo {
@@ -112,13 +80,14 @@ button {
 }
 
 .brandTagline {
+  margin-top: 1px;
+
   color: #8b94a4;
+
   font-size: 10px;
-  margin-top: 2px;
-  letter-spacing: 0.3px;
 }
 
-.calculatorBadge {
+.desktopBadge {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -126,9 +95,9 @@ button {
   padding: 9px 14px;
 
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 100px;
 
-  background: rgba(255, 255, 255, 0.8);
+  background: white;
 
   color: #596273;
 
@@ -139,22 +108,18 @@ button {
 .greenDot {
   width: 7px;
   height: 7px;
+
   border-radius: 50%;
+
   background: #22c55e;
 }
 
-.hero {
-  position: relative;
-  z-index: 1;
+/* HERO */
 
-  width: 100%;
+.hero {
   max-width: 1180px;
 
-  margin: 64px auto 40px;
-}
-
-.heroCopy {
-  max-width: 700px;
+  margin: 55px auto 35px;
 }
 
 .eyebrow {
@@ -162,22 +127,23 @@ button {
   align-items: center;
   gap: 7px;
 
-  margin-bottom: 13px;
+  margin-bottom: 12px;
 
   color: var(--blue);
 
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 1.6px;
+
+  letter-spacing: 1.5px;
 }
 
 .hero h1 {
   margin: 0;
 
-  font: 800 clamp(42px, 5vw, 68px) / 1.02
+  font: 800 clamp(42px, 5vw, 66px) / 1.05
     "Manrope", sans-serif;
 
-  letter-spacing: -3.5px;
+  letter-spacing: -3px;
 }
 
 .hero h1 span {
@@ -185,27 +151,23 @@ button {
 }
 
 .hero p {
-  max-width: 590px;
-
-  margin: 21px 0 0;
+  margin-top: 18px;
 
   color: var(--muted);
 
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 15px;
 }
 
-.calculatorLayout {
-  position: relative;
-  z-index: 1;
+/* CALCULATOR */
 
-  width: 100%;
+.calculatorLayout {
   max-width: 1180px;
 
   margin: auto;
 
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
+
   gap: 22px;
 }
 
@@ -214,50 +176,44 @@ button {
   border-radius: 24px;
 
   box-shadow:
-    0 18px 55px rgba(16, 24, 39, 0.07);
+    0 18px 50px
+    rgba(16, 24, 39, 0.06);
 }
+
+/* INPUT */
 
 .inputCard {
   padding: 30px;
 
   border: 1px solid var(--line);
 
-  background: rgba(255, 255, 255, 0.92);
+  background: white;
 }
 
-.cardTitle {
-  display: flex;
-  justify-content: space-between;
+.desktopSection h2 {
+  margin: 0;
+
+  font: 700 20px "Manrope", sans-serif;
 }
 
 .sectionLabel {
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 
   color: var(--blue);
 
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 1.5px;
-}
 
-.cardTitle h2,
-.resultHeader h2 {
-  margin: 0;
-
-  font: 700 20px "Manrope", sans-serif;
-  letter-spacing: -0.6px;
+  letter-spacing: 1.4px;
 }
 
 .fieldGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 15px;
 
   margin-top: 22px;
-}
-
-.field {
-  display: block;
 }
 
 .fieldLabel {
@@ -265,14 +221,14 @@ button {
 
   margin-bottom: 8px;
 
-  color: #515b6c;
+  color: #586173;
 
   font-size: 12px;
   font-weight: 600;
 }
 
 .inputWrapper {
-  min-height: 58px;
+  height: 58px;
 
   display: flex;
   align-items: center;
@@ -283,31 +239,24 @@ button {
   border-radius: 13px;
 
   background: #fbfcfe;
-
-  transition:
-    border-color 0.18s ease,
-    box-shadow 0.18s ease,
-    background 0.18s ease;
 }
 
 .inputWrapper:focus-within {
-  border-color: #7b96ff;
+  border-color: #7792ff;
 
-  box-shadow: 0 0 0 4px rgba(49, 94, 251, 0.08);
-
-  background: white;
+  box-shadow:
+    0 0 0 4px
+    rgba(49, 94, 251, 0.08);
 }
 
 .inputPrefix {
-  margin-right: 8px;
+  margin-right: 7px;
 
   color: #8a93a3;
-  font-size: 15px;
 }
 
 .inputWrapper input {
-  min-width: 0;
-  flex: 1;
+  width: 100%;
 
   border: 0;
   outline: 0;
@@ -319,10 +268,6 @@ button {
   font: 700 17px "Manrope", sans-serif;
 }
 
-.inputWrapper input::placeholder {
-  color: #b6bdc9;
-}
-
 .inputSuffix {
   color: #9aa2af;
 
@@ -330,8 +275,6 @@ button {
   font-weight: 800;
 
   letter-spacing: 0.8px;
-
-  white-space: nowrap;
 }
 
 .divider {
@@ -345,9 +288,9 @@ button {
 .resetButton {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
 
-  margin-top: 23px;
+  margin-top: 20px;
 
   padding: 4px 0;
 
@@ -363,47 +306,21 @@ button {
   font-weight: 600;
 }
 
-.resetButton:hover {
-  color: var(--blue);
-}
+/* RESULT */
 
 .resultCard {
-  position: relative;
-
-  overflow: hidden;
-
   padding: 30px;
-
-  border: 1px solid var(--navy);
 
   background: var(--navy);
 
   color: white;
 }
 
-.resultCard::after {
-  content: "";
-
-  position: absolute;
-
-  width: 280px;
-  height: 280px;
-
-  right: -150px;
-  top: -140px;
-
-  border: 50px solid rgba(255, 255, 255, 0.035);
-
-  border-radius: 50%;
-}
-
 .resultHeader {
-  position: relative;
-  z-index: 1;
-
   display: flex;
   align-items: center;
-  gap: 13px;
+
+  gap: 12px;
 }
 
 .resultIcon {
@@ -413,58 +330,55 @@ button {
   display: grid;
   place-items: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
 
-  background: rgba(255, 255, 255, 0.1);
+  background:
+    rgba(255, 255, 255, 0.1);
 }
 
-.sectionLabel.light {
-  margin-bottom: 5px;
+.resultHeader h2 {
+  margin: 0;
+
+  font: 700 20px "Manrope", sans-serif;
+}
+
+.light {
   color: #8fa6ff;
 }
 
 .totalBox {
-  position: relative;
-  z-index: 1;
+  margin-top: 28px;
 
-  margin-top: 31px;
-  padding: 24px 0 25px;
+  padding: 23px 0;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.1);
 }
 
 .totalBox span,
 .totalBox small {
   display: block;
 
-  color: #98a3b7;
+  color: #9ca7ba;
 
   font-size: 11px;
-  font-weight: 600;
 }
 
 .totalBox strong {
   display: block;
 
-  margin: 7px 0 5px;
+  margin: 6px 0;
 
-  font: 800 clamp(38px, 4vw, 52px)
-    "Manrope", sans-serif;
+  font: 800 48px "Manrope", sans-serif;
 
   letter-spacing: -2px;
 }
 
-.totalBox small {
-  color: #748097;
-}
-
 .breakdown {
-  position: relative;
-  z-index: 1;
-
-  padding: 20px 0 7px;
+  padding: 17px 0;
 }
 
 .breakdownRow {
@@ -472,15 +386,16 @@ button {
   align-items: center;
   justify-content: space-between;
 
-  margin: 13px 0;
+  margin: 12px 0;
 }
 
 .breakdownLabel {
   display: flex;
   align-items: center;
-  gap: 10px;
 
-  color: #aeb7c7;
+  gap: 9px;
+
+  color: #b2bbca;
 
   font-size: 12px;
 }
@@ -492,39 +407,29 @@ button {
   display: grid;
   place-items: center;
 
-  border-radius: 9px;
+  border-radius: 8px;
 
-  background: rgba(255, 255, 255, 0.07);
-
-  color: #b9c5df;
+  background:
+    rgba(255, 255, 255, 0.08);
 }
 
 .breakdownRow strong {
-  color: #f0f3f8;
-
   font-size: 13px;
 }
 
-.resultDivider {
-  height: 1px;
-
-  background: rgba(255, 255, 255, 0.1);
-}
-
 .finalRow {
-  position: relative;
-  z-index: 1;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding-top: 20px;
+  padding-top: 18px;
 
-  color: #d6dce7;
+  border-top:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  color: #cbd3df;
 
   font-size: 12px;
-  font-weight: 600;
 }
 
 .finalRow strong {
@@ -533,36 +438,24 @@ button {
   font: 700 18px "Manrope", sans-serif;
 }
 
-.estimateNote {
-  position: relative;
-  z-index: 1;
+/* MOBILE TITLE */
 
-  display: flex;
-  align-items: center;
-  gap: 7px;
-
-  margin-top: 23px;
-
-  color: #707d93;
-
-  font-size: 10px;
+.mobileTitle {
+  display: none;
 }
 
-footer {
-  position: relative;
-  z-index: 1;
+/* FOOTER */
 
-  width: 100%;
+footer {
   max-width: 1180px;
 
-  margin: 28px auto 0;
+  margin: 25px auto 0;
 
-  padding-top: 22px;
+  padding-top: 20px;
 
   border-top: 1px solid var(--line);
 
   display: flex;
-  align-items: center;
   justify-content: space-between;
 
   color: #9aa2af;
@@ -572,62 +465,243 @@ footer {
 
 .footerBrand {
   color: #596273;
+
   font-weight: 800;
 }
 
-@media (max-width: 850px) {
+/* =========================
+   MOBILE APP DESIGN
+========================= */
+
+@media (max-width: 700px) {
+
   .page {
-    padding: 0 20px 30px;
+    padding: 0 14px 20px;
+
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f5f7fb 100%
+      );
   }
+
+  /* NAVBAR */
 
   .navbar {
-    height: 72px;
+    height: 64px;
   }
 
-  .calculatorBadge {
+  .brandLogo {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    font-size: 19px;
+  }
+
+  .brandName {
+    font-size: 18px;
+  }
+
+  .brandTagline {
+    font-size: 8px;
+  }
+
+  .desktopBadge {
     display: none;
   }
 
+  /* HIDE BIG HERO */
+
   .hero {
-    margin: 48px auto 30px;
+    display: none;
   }
 
-  .hero h1 {
-    letter-spacing: -2.5px;
-  }
-
-  .hero p {
-    font-size: 14px;
-  }
+  /* CALCULATOR */
 
   .calculatorLayout {
-    grid-template-columns: 1fr;
-  }
-}
+    display: flex;
+    flex-direction: column;
 
-@media (max-width: 520px) {
+    gap: 10px;
+  }
+
   .inputCard,
   .resultCard {
-    padding: 22px;
-    border-radius: 19px;
+    border-radius: 18px;
+
+    box-shadow:
+      0 8px 25px
+      rgba(16, 24, 39, 0.06);
+  }
+
+  /* INPUT CARD */
+
+  .inputCard {
+    padding: 18px;
+  }
+
+  .mobileTitle {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 17px;
+  }
+
+  .mobileIcon {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: #eef2ff;
+
+    color: var(--blue);
+  }
+
+  .mobileTitle h2 {
+    margin: 0;
+
+    font: 700 16px "Manrope", sans-serif;
+  }
+
+  .mobileTitle p {
+    margin: 2px 0 0;
+
+    color: #8992a2;
+
+    font-size: 9px;
+  }
+
+  .desktopSection {
+    display: none;
   }
 
   .fieldGrid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 0;
   }
 
-  .hero h1 {
-    font-size: 42px;
+  .fieldLabel {
+    margin-bottom: 5px;
+
+    font-size: 10px;
   }
 
-  .hero p {
-    font-size: 13px;
+  .inputWrapper {
+    height: 49px;
+
+    padding: 0 10px;
+
+    border-radius: 10px;
   }
+
+  .inputWrapper input {
+    font-size: 15px;
+  }
+
+  .inputSuffix {
+    font-size: 7px;
+  }
+
+  .divider {
+    margin: 16px 0;
+  }
+
+  .resetButton {
+    margin-top: 13px;
+
+    font-size: 10px;
+  }
+
+  /* RESULT CARD */
+
+  .resultCard {
+    padding: 18px;
+  }
+
+  .resultHeader {
+    gap: 9px;
+  }
+
+  .resultIcon {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 9px;
+  }
+
+  .resultHeader h2 {
+    font-size: 16px;
+  }
+
+  .resultHeader .sectionLabel {
+    margin-bottom: 3px;
+
+    font-size: 8px;
+  }
+
+  .totalBox {
+    margin-top: 17px;
+
+    padding: 15px 0;
+  }
+
+  .totalBox strong {
+    margin: 4px 0;
+
+    font-size: 35px;
+  }
+
+  .totalBox span,
+  .totalBox small {
+    font-size: 9px;
+  }
+
+  .breakdown {
+    padding: 8px 0;
+  }
+
+  .breakdownRow {
+    margin: 8px 0;
+  }
+
+  .breakdownLabel {
+    font-size: 10px;
+  }
+
+  .breakdownIcon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .breakdownRow strong {
+    font-size: 11px;
+  }
+
+  .finalRow {
+    padding-top: 12px;
+
+    font-size: 10px;
+  }
+
+  .finalRow strong {
+    font-size: 15px;
+  }
+
+  /* FOOTER */
 
   footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 7px;
+    display: none;
   }
 }
