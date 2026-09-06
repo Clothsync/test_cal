@@ -1,0 +1,633 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap");
+
+:root {
+  --ink: #101827;
+  --muted: #687386;
+  --line: #e7eaf0;
+  --navy: #101a32;
+  --blue: #315efb;
+  --background: #f7f8fb;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 0 7vw 40px;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orbOne {
+  width: 430px;
+  height: 430px;
+  right: -200px;
+  top: -210px;
+  background: #e7edff;
+}
+
+.orbTwo {
+  width: 300px;
+  height: 300px;
+  left: -180px;
+  bottom: 50px;
+  background: #edf2ff;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1180px;
+  height: 82px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.brandLogo {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background: var(--navy);
+  color: white;
+
+  font: 800 22px "Manrope", sans-serif;
+}
+
+.brandName {
+  font: 800 21px "Manrope", sans-serif;
+  letter-spacing: -0.8px;
+}
+
+.brandName span,
+.footerBrand span {
+  color: var(--blue);
+}
+
+.brandTagline {
+  color: #8b94a4;
+  font-size: 10px;
+  margin-top: 2px;
+  letter-spacing: 0.3px;
+}
+
+.calculatorBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 14px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  color: #596273;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.greenDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 64px auto 40px;
+}
+
+.heroCopy {
+  max-width: 700px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 13px;
+
+  color: var(--blue);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font: 800 clamp(42px, 5vw, 68px) / 1.02
+    "Manrope", sans-serif;
+
+  letter-spacing: -3.5px;
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.hero p {
+  max-width: 590px;
+
+  margin: 21px 0 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.calculatorLayout {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1180px;
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 22px;
+}
+
+.inputCard,
+.resultCard {
+  border-radius: 24px;
+
+  box-shadow:
+    0 18px 55px rgba(16, 24, 39, 0.07);
+}
+
+.inputCard {
+  padding: 30px;
+
+  border: 1px solid var(--line);
+
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.cardTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sectionLabel {
+  margin-bottom: 8px;
+
+  color: var(--blue);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.cardTitle h2,
+.resultHeader h2 {
+  margin: 0;
+
+  font: 700 20px "Manrope", sans-serif;
+  letter-spacing: -0.6px;
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+
+  margin-top: 22px;
+}
+
+.field {
+  display: block;
+}
+
+.fieldLabel {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #515b6c;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.inputWrapper {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  border: 1px solid #dfe3eb;
+  border-radius: 13px;
+
+  background: #fbfcfe;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.inputWrapper:focus-within {
+  border-color: #7b96ff;
+
+  box-shadow: 0 0 0 4px rgba(49, 94, 251, 0.08);
+
+  background: white;
+}
+
+.inputPrefix {
+  margin-right: 8px;
+
+  color: #8a93a3;
+  font-size: 15px;
+}
+
+.inputWrapper input {
+  min-width: 0;
+  flex: 1;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font: 700 17px "Manrope", sans-serif;
+}
+
+.inputWrapper input::placeholder {
+  color: #b6bdc9;
+}
+
+.inputSuffix {
+  color: #9aa2af;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+
+  white-space: nowrap;
+}
+
+.divider {
+  height: 1px;
+
+  margin: 28px 0;
+
+  background: var(--line);
+}
+
+.resetButton {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 23px;
+
+  padding: 4px 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #7b8494;
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.resetButton:hover {
+  color: var(--blue);
+}
+
+.resultCard {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 30px;
+
+  border: 1px solid var(--navy);
+
+  background: var(--navy);
+
+  color: white;
+}
+
+.resultCard::after {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: -150px;
+  top: -140px;
+
+  border: 50px solid rgba(255, 255, 255, 0.035);
+
+  border-radius: 50%;
+}
+
+.resultHeader {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.resultIcon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sectionLabel.light {
+  margin-bottom: 5px;
+  color: #8fa6ff;
+}
+
+.totalBox {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 31px;
+  padding: 24px 0 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.totalBox span,
+.totalBox small {
+  display: block;
+
+  color: #98a3b7;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.totalBox strong {
+  display: block;
+
+  margin: 7px 0 5px;
+
+  font: 800 clamp(38px, 4vw, 52px)
+    "Manrope", sans-serif;
+
+  letter-spacing: -2px;
+}
+
+.totalBox small {
+  color: #748097;
+}
+
+.breakdown {
+  position: relative;
+  z-index: 1;
+
+  padding: 20px 0 7px;
+}
+
+.breakdownRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 13px 0;
+}
+
+.breakdownLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #aeb7c7;
+
+  font-size: 12px;
+}
+
+.breakdownIcon {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  color: #b9c5df;
+}
+
+.breakdownRow strong {
+  color: #f0f3f8;
+
+  font-size: 13px;
+}
+
+.resultDivider {
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.finalRow {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 20px;
+
+  color: #d6dce7;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.finalRow strong {
+  color: white;
+
+  font: 700 18px "Manrope", sans-serif;
+}
+
+.estimateNote {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 23px;
+
+  color: #707d93;
+
+  font-size: 10px;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 28px auto 0;
+
+  padding-top: 22px;
+
+  border-top: 1px solid var(--line);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #9aa2af;
+
+  font-size: 10px;
+}
+
+.footerBrand {
+  color: #596273;
+  font-weight: 800;
+}
+
+@media (max-width: 850px) {
+  .page {
+    padding: 0 20px 30px;
+  }
+
+  .navbar {
+    height: 72px;
+  }
+
+  .calculatorBadge {
+    display: none;
+  }
+
+  .hero {
+    margin: 48px auto 30px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2.5px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .calculatorLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .inputCard,
+  .resultCard {
+    padding: 22px;
+    border-radius: 19px;
+  }
+
+  .fieldGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+  }
+}
